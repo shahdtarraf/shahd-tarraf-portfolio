@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shahd Tarraf | AI Engineer & Python Developer</title>
+    <meta
+      name="description"
+      content="Shahd Tarraf is an AI engineer and Python developer. She builds practical applications with machine learning, NLP, computer vision, and modern backend tools."
+    />
+    <meta property="og:title" content="Shahd Tarraf | AI Engineer & Python Developer" />
+    <meta
+      property="og:description"
+      content="AI engineer and Python developer. Machine learning, NLP, computer vision, and backend systems."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/media/avatar.jpg" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      try {
+        const theme = localStorage.getItem("theme");
+        const locale = localStorage.getItem("locale");
+        if (theme === "dark" || (!theme && matchMedia("(prefers-color-scheme: dark)").matches)) {
+          document.documentElement.classList.add("dark");
+        }
+        if (locale === "ar") {
+          document.documentElement.lang = "ar";
+          document.documentElement.dir = "rtl";
+        }
+      } catch {}
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

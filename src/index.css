@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "IBM Plex Sans", "IBM Plex Sans Arabic", system-ui, sans-serif;
+  --font-display: "Syne", "IBM Plex Sans Arabic", system-ui, sans-serif;
+  --color-accent: #ff7a00;
+  --color-accent-dark: #e56e00;
+  --color-ink: #111827;
+  --color-muted: #64748b;
+  --color-paper: #f8fafc;
+  --color-card: #ffffff;
+  --color-line: #e2e8f0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
+
+html.dark body {
+  background: #0b1220;
+  color: #e5e7eb;
+}
+
+html.dark {
+  --color-paper: #0b1220;
+  --color-card: #111827;
+  --color-ink: #f3f4f6;
+  --color-muted: #94a3b8;
+  --color-line: #1f2937;
+}
+
+::selection {
+  background: #ff7a00;
+  color: #111827;
+}
+
+:focus-visible {
+  outline: 2px solid #ff7a00;
+  outline-offset: 3px;
+}
+
+.grid-bg {
+  background-image:
+    linear-gradient(to right, rgb(17 24 39 / 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(17 24 39 / 0.04) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+html.dark .grid-bg {
+  background-image:
+    linear-gradient(to right, rgb(255 255 255 / 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(255 255 255 / 0.04) 1px, transparent 1px);
+}
+
+.kicker {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-accent);
+}
+
+html[lang="en"] .kicker {
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.card-hover {
+  transition: border-color 160ms ease, transform 160ms ease;
+}
+
+.card-hover:hover {
+  border-color: #ff7a00;
+  transform: translateY(-2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .card-hover,
+  .card-hover:hover {
+    transition: none;
+    transform: none;
+  }
+}
